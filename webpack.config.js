@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    print: './src/print.js',
+    print: './src/components/createList.js',
   },
   devtool: 'inline-source-map',
   devServer: {
