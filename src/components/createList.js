@@ -1,5 +1,5 @@
 import listElement from './listElement';
-import data from './data';
+import { data } from './statusUpdate';
 
 export default function createList() {
   const todoList = document.getElementById('todo-list');
