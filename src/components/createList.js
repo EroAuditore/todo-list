@@ -1,40 +1,36 @@
-
 import listElement from './listElement';
-import  { data } from './data';
+import data from './data';
 
 export default function createList() {
-  
-
   const todoList = document.getElementById('todo-list');
 
-  /************************ First element *****************************************/
+  /** ********************** First element **************************************** */
   const firstElement = document.createElement('li');
   const text = document.createElement('p');
   text.innerHTML = "today's to dos";
-  text.classList.add("title-text");
+  text.classList.add('title-text');
   firstElement.appendChild(text);
 
-
-/************************ Search element *****************************************/
+  /** ********************** Search element **************************************** */
   const searchElement = document.createElement('li');
   const txtSearch = document.createElement('input');
   txtSearch.classList.add('txt-input');
   searchElement.appendChild(txtSearch);
 
-/************************ End list element *****************************************/
+  /** ********************** End list element **************************************** */
   const cAllElement = document.createElement('li');
   const btn = document.createElement('button');
-  btn.innerText = "Clear all elements";
+  btn.innerText = 'Clear all elements';
   btn.classList.add('btn-clear');
   cAllElement.appendChild(btn);
-  
+
   todoList.appendChild(firstElement);
   todoList.appendChild(searchElement);
 
-  data.map((task)=>{
-    let element = listElement(task);
+  data.forEach((task) => {
+    const element = listElement(task);
     todoList.appendChild(element);
-  })
+  });
 
   todoList.appendChild(cAllElement);
 }
