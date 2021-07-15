@@ -1,4 +1,4 @@
-import { dragStart, dragEnd, dragOver } from "./interaction";
+import { dragStart, dragEnd, dragOver, dragLeave, drop } from "./interaction";
 
 const listElement = (task) => {
   const element = document.createElement('li');
@@ -6,8 +6,8 @@ const listElement = (task) => {
  
   element.addEventListener('dragstart', ()=>{ dragStart(element)});
   element.addEventListener('dragover', (event)=>{ dragOver(element, event) });
-  element.addEventListener('dragleave', ()=>{})
-  element.addEventListener('drop', ()=>{})
+  element.addEventListener('dragleave', ()=>{dragLeave(element); });
+  element.addEventListener('drop', ()=>{drop(element);});
   element.addEventListener('dragend', ()=>{ dragEnd(element)});
   
  

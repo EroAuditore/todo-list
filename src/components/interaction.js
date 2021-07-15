@@ -8,10 +8,24 @@ const dragEnd = (elm)=>{
 } 
 
 const dragOver = (elm, event)=>{
-    elm.classList.add('over-elemt');
+    event.preventDefault();
+    elm.classList.add('over-element');
 } 
 
+const dragLeave = (elm)=>{
+    elm.classList.remove('over-element');
+} 
+
+const drop = (elm)=>{
+    elm.classList.remove('over-element');
+    const elmDragged = document.querySelector('.draggin');
+    console.log("dragged",elmDragged);
+    elm.before(elmDragged);
+
+}
 
 
 
-export {dragStart, dragEnd, dragOver}
+
+
+export {dragStart, dragEnd, dragOver, dragLeave, drop}

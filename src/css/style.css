@@ -51,6 +51,7 @@ i,
   flex-direction: row;
   justify-content: flex-start;
   padding: 0.5rem;
+  background-color: transparent;
 }
 
 .txt-input,
@@ -70,4 +71,12 @@ i,
 
 input:focus {
   outline: none;
+}
+
+.draggin {
+  background-color: greenyellow;
+}
+
+.over-element {
+  background-color: pink;
 }
