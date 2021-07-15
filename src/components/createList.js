@@ -7,13 +7,18 @@ export default function createList() {
   /** ********************** First element **************************************** */
   const firstElement = document.createElement('li');
   const text = document.createElement('p');
-  text.innerHTML = "today's to dos";
+  text.innerHTML = "today's To dos";
   text.classList.add('title-text');
+  const icon = document.createElement('i');
+  icon.classList.add('fas', 'fa-sync-alt');
+
   firstElement.appendChild(text);
+  firstElement.appendChild(icon);
 
   /** ********************** Search element **************************************** */
   const searchElement = document.createElement('li');
   const txtSearch = document.createElement('input');
+  txtSearch.placeholder = 'Add to your list...';
   txtSearch.classList.add('txt-input');
   searchElement.appendChild(txtSearch);
 

@@ -26,12 +26,15 @@ p {
 body {
   background-color: #edf1fd;
 }
+
 .todo-list {
   border: 1px solid rgba(201, 194, 194, 0.966);
   box-shadow: 2px 2px 12px rgb(0 0 0 / 5%);
 }
+
 .container {
   max-width: 400px;
+  margin-top: 5rem;
 }
 
 li {
@@ -43,7 +46,8 @@ li {
 
 i,
 .div-content,
-.title-text {
+.title-text,
+.div-content p {
   flex-direction: row;
   justify-content: flex-start;
   padding: 0.5rem;
