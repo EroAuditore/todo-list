@@ -2,6 +2,8 @@ import {
   dragStart, dragEnd, dragOver, dragLeave, drop,
 } from './interaction';
 
+import { updateStatus } from './statusUpdate';
+
 const listElement = (task) => {
   const element = document.createElement('li');
   element.draggable = true;
@@ -24,9 +26,9 @@ const listElement = (task) => {
   check.classList.add('completed');
   check.type = 'checkbox';
   check.check = task.completed;
-  //   check.addEventListener('change', check){
-  //     updateStatus(task);
-  //   }
+  check.addEventListener('change', () => {
+    updateStatus(parseInt(element.getAttribute('index'), 10), check);
+  });
 
   const icon = document.createElement('i');
   icon.classList.add('fas', 'fa-ellipsis-v');
