@@ -17,6 +17,13 @@ const createTask =(e)=>{
    
 }
 
+const updateTask = (index, elm) => {
+    const findObj = data.find((obj) => obj.index === index);
+    findObj.description = elm.value;
+    console.log("elm", findObj);
+    saveData();
+  };
+
 
 const runList =()=>{
     const todoList = document.getElementById('todo-list');
@@ -36,4 +43,4 @@ const clearDOMList =() =>{
   
 }
 
-export {createTask, runList}
+export {createTask, runList, updateTask}

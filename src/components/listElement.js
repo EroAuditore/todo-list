@@ -3,6 +3,7 @@ import {
 } from './interaction';
 
 import { updateStatus } from './statusUpdate';
+import { updateTask } from './crudList';
 
 const listElement = (task) => {
   const element = document.createElement('li');
@@ -18,10 +19,13 @@ const listElement = (task) => {
   const divElmt = document.createElement('div');
   divElmt.classList.add('div-content');
 
-  const p = document.createElement('p');
-  p.textContent = task.description;
-  p.classList.add('description');
-
+  const txtInput = document.createElement('input');
+  txtInput.value = task.description;
+  txtInput.classList.add('txt-input');
+  txtInput.addEventListener('change', () => {
+    updateTask(parseInt(element.getAttribute('index'), 10), txtInput);
+  });
+  
   const check = document.createElement('input');
   check.classList.add('completed');
   check.type = 'checkbox';
@@ -34,7 +38,7 @@ const listElement = (task) => {
   icon.classList.add('fas', 'fa-ellipsis-v');
 
   divElmt.appendChild(check);
-  divElmt.appendChild(p);
+  divElmt.appendChild(txtInput);
   element.appendChild(divElmt);
   element.appendChild(icon);
 
