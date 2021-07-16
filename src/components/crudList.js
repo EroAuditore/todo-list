@@ -31,8 +31,18 @@ const clearAllCompleted = () => {
  orderData();
  saveData();
  clearDOMList();
-runList();
+ runList();
 }
+
+const deleteTask = (index, elm) => {
+    const removed = data.filter(obj => obj.index != index);
+ clearData();
+ removeCompleted(removed);
+ orderData();
+ saveData();
+ clearDOMList();
+ runList();
+};
 
 const runList =()=>{
     const todoList = document.getElementById('todo-list');
@@ -52,4 +62,4 @@ const clearDOMList =() =>{
   
 }
 
-export {createTask, runList, updateTask, clearAllCompleted}
+export {createTask, runList, updateTask, clearAllCompleted, deleteTask}

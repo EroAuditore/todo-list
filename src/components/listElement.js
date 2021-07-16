@@ -3,7 +3,7 @@ import {
 } from './interaction';
 
 import { updateStatus } from './statusUpdate';
-import { updateTask } from './crudList';
+import { updateTask, deleteTask } from './crudList';
 
 const listElement = (task) => {
   const element = document.createElement('li');
@@ -20,6 +20,7 @@ const listElement = (task) => {
   divElmt.classList.add('div-content');
 
   const txtInput = document.createElement('input');
+  txtInput.setAttribute('index', task.index);
   txtInput.value = task.description;
   txtInput.classList.add('txt-list');
   txtInput.addEventListener('change', () => {
@@ -31,16 +32,23 @@ const listElement = (task) => {
   check.type = 'checkbox';
   check.check = task.completed;
   check.addEventListener('change', () => {
-    console.log('update');
     updateStatus(parseInt(element.getAttribute('index'), 10), check);
   });
 
   const icon = document.createElement('i');
   icon.classList.add('fas', 'fa-ellipsis-v');
 
+  const deleteicon = document.createElement('i');
+  deleteicon.classList.add('far', 'fa-trash-alt');
+  deleteicon.setAttribute('index', task.index);
+  deleteicon.addEventListener('click', ()=>{
+    deleteTask(parseInt(element.getAttribute('index'), 10), deleteicon);
+  })
+
   divElmt.appendChild(check);
   divElmt.appendChild(txtInput);
   element.appendChild(divElmt);
+  element.appendChild(deleteicon);
   element.appendChild(icon);
 
   element.classList.add('list-element');
