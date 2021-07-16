@@ -54,6 +54,7 @@ i,
   background-color: transparent;
 }
 
+.txt-list,
 .txt-input,
 .btn-clear {
   width: 100%;

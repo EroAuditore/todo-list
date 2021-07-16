@@ -2,7 +2,6 @@
 let data = [];
 
 const saveData = () => {
-  console.log(data);
   const jsonData = JSON.stringify(data);
   localStorage.setItem('data', jsonData);
 };
@@ -17,6 +16,10 @@ const clearData = () => {
   data = [];
 };
 
+const removeCompleted = (newData) => {
+  data = [...newData];
+};
+
 const addData = (obj) => {
   data.push(obj);
 };
@@ -26,6 +29,6 @@ const loadData = () => {
   data = localData == null ? data : JSON.parse(localData);
 };
 export {
-  data, clearData, addData, saveData, updateStatus, loadData,
+  data, clearData, addData, saveData, updateStatus, loadData, removeCompleted
 };
 /* eslint-enable import/no-mutable-exports */

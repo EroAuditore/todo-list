@@ -21,7 +21,7 @@ const listElement = (task) => {
 
   const txtInput = document.createElement('input');
   txtInput.value = task.description;
-  txtInput.classList.add('txt-input');
+  txtInput.classList.add('txt-list');
   txtInput.addEventListener('change', () => {
     updateTask(parseInt(element.getAttribute('index'), 10), txtInput);
   });
@@ -31,6 +31,7 @@ const listElement = (task) => {
   check.type = 'checkbox';
   check.check = task.completed;
   check.addEventListener('change', () => {
+    console.log('update');
     updateStatus(parseInt(element.getAttribute('index'), 10), check);
   });
 

@@ -1,5 +1,6 @@
-import { data, addData, saveData } from "./statusUpdate";
+import { data, addData, saveData,removeCompleted } from "./statusUpdate";
 import listElement from './listElement';
+import {orderData, clearData, updateData} from "./interaction";
 
 const createTask =(e)=>{
     
@@ -20,10 +21,18 @@ const createTask =(e)=>{
 const updateTask = (index, elm) => {
     const findObj = data.find((obj) => obj.index === index);
     findObj.description = elm.value;
-    console.log("elm", findObj);
     saveData();
-  };
+};
 
+const clearAllCompleted = () => {
+ const completed = data.filter(obj => !obj.completed);
+ clearData();
+ removeCompleted(completed);
+ orderData();
+ saveData();
+ clearDOMList();
+runList();
+}
 
 const runList =()=>{
     const todoList = document.getElementById('todo-list');
@@ -43,4 +52,4 @@ const clearDOMList =() =>{
   
 }
 
-export {createTask, runList, updateTask}
+export {createTask, runList, updateTask, clearAllCompleted}

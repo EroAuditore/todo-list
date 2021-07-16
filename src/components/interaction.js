@@ -20,14 +20,16 @@ const orderData = () => {
   const draggableElements = document.querySelectorAll('.draggable');
   let i = 0;
   draggableElements.forEach((element) => {
+    
     element.setAttribute('index', i);
+    console.log("order data", element)
     i += 1;
   });
 };
 const updateData = () => {
   const draggableElements = document.querySelectorAll('.draggable');
   draggableElements.forEach((element) => {
-    const descriptionTxt = element.getElementsByClassName('description')[0].textContent;
+    const descriptionTxt = element.getElementsByClassName('txt-list')[0].textContent;
     const completedChk = element.getElementsByClassName('completed')[0].checked;
     const indexT = parseInt(element.getAttribute('index'), 10);
     const newTask = {
@@ -48,5 +50,5 @@ const drop = (elm) => {
   saveData();
 };
 export {
-  dragStart, dragEnd, dragOver, dragLeave, drop,
+  dragStart, dragEnd, dragOver, dragLeave, drop,orderData, clearData, updateData, saveData
 };
