@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-Coming soon
+[todoList](https://eroauditore.github.io/todo-list/)
 
 ## Getting Started
 
@@ -25,7 +25,9 @@ Coming soon
 
 ### Install
 
-- In the clone folder, run npm run build
+- In the clone folder, run:
+- npm install
+- npm run build
 
 ### Usage
 
