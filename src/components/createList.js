@@ -1,8 +1,4 @@
-import listElement from './listElement';
-import { data } from './statusUpdate';
-import {createTask, clearAllCompleted} from './crudList'
-
-
+import { createTask, clearAllCompleted } from './crudList';
 
 export default function createList() {
   const todoList = document.getElementById('todo-list');
@@ -25,7 +21,6 @@ export default function createList() {
   txtSearch.classList.add('txt-list');
   txtSearch.addEventListener('keyup', createTask);
   searchElement.appendChild(txtSearch);
-  
 
   /** ********************** End list element **************************************** */
   const cAllElement = document.createElement('li');
@@ -33,7 +28,7 @@ export default function createList() {
   const btn = document.createElement('button');
   btn.innerText = 'Clear all elements';
   btn.classList.add('btn-clear');
-  btn.addEventListener('click',clearAllCompleted);
+  btn.addEventListener('click', clearAllCompleted);
   cAllElement.appendChild(btn);
 
   todoList.appendChild(firstElement);

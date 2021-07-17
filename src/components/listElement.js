@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import {
   dragStart, dragEnd, dragOver, dragLeave, drop,
 } from './interaction';
@@ -26,7 +27,7 @@ const listElement = (task) => {
   txtInput.addEventListener('change', () => {
     updateTask(parseInt(element.getAttribute('index'), 10), txtInput);
   });
-  
+
   const check = document.createElement('input');
   check.classList.add('completed');
   check.type = 'checkbox';
@@ -41,9 +42,9 @@ const listElement = (task) => {
   const deleteicon = document.createElement('i');
   deleteicon.classList.add('far', 'fa-trash-alt');
   deleteicon.setAttribute('index', task.index);
-  deleteicon.addEventListener('click', ()=>{
+  deleteicon.addEventListener('click', () => {
     deleteTask(parseInt(element.getAttribute('index'), 10), deleteicon);
-  })
+  });
 
   divElmt.appendChild(check);
   divElmt.appendChild(txtInput);
@@ -56,3 +57,4 @@ const listElement = (task) => {
 };
 
 export default listElement;
+/* eslint-enable import/no-cycle */

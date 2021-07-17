@@ -29,6 +29,6 @@ const loadData = () => {
   data = localData == null ? data : JSON.parse(localData);
 };
 export {
-  data, clearData, addData, saveData, updateStatus, loadData, removeCompleted
+  data, clearData, addData, saveData, updateStatus, loadData, removeCompleted,
 };
 /* eslint-enable import/no-mutable-exports */

@@ -20,9 +20,8 @@ const orderData = () => {
   const draggableElements = document.querySelectorAll('.draggable');
   let i = 0;
   draggableElements.forEach((element) => {
-    
     element.setAttribute('index', i);
-    console.log("order data", element)
+    console.log('order data', element);
     i += 1;
   });
 };
@@ -50,5 +49,5 @@ const drop = (elm) => {
   saveData();
 };
 export {
-  dragStart, dragEnd, dragOver, dragLeave, drop,orderData, clearData, updateData, saveData
+  dragStart, dragEnd, dragOver, dragLeave, drop, orderData, clearData, updateData, saveData,
 };
