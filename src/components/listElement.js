@@ -1,8 +1,6 @@
-/* eslint-disable import/no-cycle */
 import {
   dragStart, dragEnd, dragOver, dragLeave, drop,
 } from './interaction';
-
 import { updateStatus } from './statusUpdate';
 import { updateTask, deleteTask } from './crudList';
 
@@ -44,6 +42,7 @@ const listElement = (task) => {
   deleteicon.setAttribute('index', task.index);
   deleteicon.addEventListener('click', () => {
     deleteTask(parseInt(element.getAttribute('index'), 10), deleteicon);
+    element.remove();
   });
 
   divElmt.appendChild(check);
@@ -57,4 +56,3 @@ const listElement = (task) => {
 };
 
 export default listElement;
-/* eslint-enable import/no-cycle */

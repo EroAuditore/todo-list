@@ -22,13 +22,16 @@ const removeCompleted = (newData) => {
 
 const addData = (obj) => {
   data.push(obj);
+  saveData();
 };
 
 const loadData = () => {
   const localData = localStorage.getItem('data');
   data = localData == null ? data : JSON.parse(localData);
 };
+
+const getData = () => data;
 export {
-  data, clearData, addData, saveData, updateStatus, loadData, removeCompleted,
+  data, clearData, addData, saveData, updateStatus, loadData, removeCompleted, getData,
 };
 /* eslint-enable import/no-mutable-exports */
