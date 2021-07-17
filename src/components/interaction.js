@@ -21,7 +21,6 @@ const orderData = () => {
   let i = 0;
   draggableElements.forEach((element) => {
     element.setAttribute('index', i);
-    console.log('order data', element);
     i += 1;
   });
 };
