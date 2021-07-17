@@ -30,7 +30,11 @@ Coming soon
 ### Usage
 
 - open http://localhost:8080/
-- No posible interactions yet
+- Write your task and hit enter to save it to save it
+- Yo can:
+  -- Delete
+  -- Update
+  -- Clear all completed task
 
 ### Run tests
 
