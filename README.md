@@ -9,10 +9,6 @@
 - Javascript
 - webpack
 
-## Live Demo
-
-[todoList](https://eroauditore.github.io/todo-list/)
-
 ## Getting Started
 
 ### Prerequisites
