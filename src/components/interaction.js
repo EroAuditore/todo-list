@@ -28,7 +28,7 @@ const orderData = () => {
 const updateData = () => {
   const draggableElements = document.querySelectorAll('.draggable');
   draggableElements.forEach((element) => {
-    const descriptionTxt = element.getElementsByClassName('txt-list')[0].textContent;
+    const descriptionTxt = element.getElementsByClassName('txt-list')[0].value;
     const completedChk = element.getElementsByClassName('completed')[0].checked;
     const indexT = parseInt(element.getAttribute('index'), 10);
     const newTask = {
