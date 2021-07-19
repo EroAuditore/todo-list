@@ -54,6 +54,7 @@ i,
   background-color: transparent;
 }
 
+.txt-list,
 .txt-input,
 .btn-clear {
   width: 100%;
@@ -61,7 +62,7 @@ i,
   box-sizing: border-box;
   border: none;
   background: none;
-  color: #979799;
+  color: #383838;
   font-weight: 600;
 }
 

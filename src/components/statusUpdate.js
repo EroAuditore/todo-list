@@ -1,7 +1,5 @@
 /* eslint-disable import/no-mutable-exports */
-let data = [{ description: 'study', completed: false, index: 2 },
-  { description: 'work out', completed: false, index: 0 },
-  { description: 'eat', completed: false, index: 1 }];
+let data = [];
 
 const saveData = () => {
   const jsonData = JSON.stringify(data);
@@ -18,15 +16,22 @@ const clearData = () => {
   data = [];
 };
 
+const removeCompleted = (newData) => {
+  data = [...newData];
+};
+
 const addData = (obj) => {
   data.push(obj);
+  saveData();
 };
 
 const loadData = () => {
   const localData = localStorage.getItem('data');
   data = localData == null ? data : JSON.parse(localData);
 };
+
+const getData = () => data;
 export {
-  data, clearData, addData, saveData, updateStatus, loadData,
+  data, clearData, addData, saveData, updateStatus, loadData, removeCompleted, getData,
 };
 /* eslint-enable import/no-mutable-exports */

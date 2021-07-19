@@ -9,10 +9,6 @@
 - Javascript
 - webpack
 
-## Live Demo
-
-Coming soon
-
 ## Getting Started
 
 ### Prerequisites
@@ -25,12 +21,18 @@ Coming soon
 
 ### Install
 
-- In the clone folder, run npm run build
+- In the clone folder, run:
+- npm install
+- npm run build
 
 ### Usage
 
 - open http://localhost:8080/
-- No posible interactions yet
+- Write your task and hit enter to save it to save it
+- Yo can:
+  -- Delete
+  -- Update
+  -- Clear all completed task
 
 ### Run tests
 
